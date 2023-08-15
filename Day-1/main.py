@@ -1,67 +1,67 @@
-""""DAY#1"""
+# DAY #1 Code
 
 
-def demander_nom():  # demander nom
-    nom_str = ""
-    while nom_str == "":
-        nom_str = input("Quel est votre nom ? ")
-    return nom_str
+def ask_name():  # Ask for name
+    name_str = ""
+    while name_str == "":
+        name_str = input("What is your name? ")
+    return name_str
 
 
-def demander_age(nom_personne):  # demander âge
+def ask_age(person_name):  # Ask for age
     age_int = 0
     while age_int == 0:
-        age_str = input(nom_personne+" quel est votre âge ? ")
+        age_str = input(person_name + ", what is your age? ")
         try:
             age_int = int(age_str)
         except ValueError:
-            print("ERREUR : Vous devrez rentrer un nombre pour l'âge ")
+            print("ERROR: Please enter a number for age")
     return age_int
 
 
-def demander_taille(nom_personne):
-    taille_float = 0
-    while taille_float == 0:
-        taille_str = input(nom_personne + " quel est votre taille ? ")
+def ask_height(person_name):
+    height_float = 0
+    while height_float == 0:
+        height_str = input(person_name + ", what is your height? ")
         try:
-            taille_float = float(taille_str)
+            height_float = float(height_str)
         except ValueError:
-            print("ERREUR : Vous devrez rentrer un nombre pour la taille ")
+            print("ERROR: Please enter a number for height")
         else:
-            if taille_float > 2.5:
-                print("Veuillez rentrer une taille réel en mètre")
-                taille_float = 0
-    return taille_float
+            if height_float > 2.5:
+                print("Please enter a realistic height in meters")
+                height_float = 0
+    return height_float
 
 
-def afficher_resultats(nom_personne, age_personne, taille_personne):
+def display_results(person_name, person_age, person_height):
     print()
-    print("Vous vous appelez " + nom_personne + " vous avez " + str(age_personne) + " ans")
-    print("L'an prochain vous aurez " + str(age_personne + 1) + " ans")
+    print("Your name is " + person_name + ", you are " + str(person_age) + " years old.")
+    print("Next year, you will be " + str(person_age + 1) + " years old.")
 
-    if age_personne == 17:
-        print("Vous êtes presque majeur")
-    elif age_personne == 18:
-        print("Tout juste majeur : Félicitation")
-    elif age_personne == 1 or age_personne == 2:
-        print("Vous êtes bébé")
-    elif 12 <= age_personne < 18:
-        print("Vous êtes adolescent")
-    elif age_personne > 60:
-        print("Vous êtes sénior")
-    elif age_personne < 10:
-        print("Vous êtes enfant")
-    elif age_personne > 18:
-        print("Vous êtes majeur")
+    if person_age == 17:
+        print("You are almost an adult.")
+    elif person_age == 18:
+        print("Just turned adult: Congratulations!")
+    elif person_age == 1 or person_age == 2:
+        print("You are a baby.")
+    elif 12 <= person_age < 18:
+        print("You are a teenager.")
+    elif person_age > 60:
+        print("You are a senior.")
+    elif person_age < 10:
+        print("You are a child.")
+    elif person_age > 18:
+        print("You are an adult.")
     else:
-        print("Vous êtes mineur")
+        print("You are a minor.")
 
-    # afficher taille
-    print("Votre taille : "+str(taille_personne)+" m")
+    # Display height
+    print("Your height: " + str(person_height) + " m")
+
 # ------------------------------------------------------------------------------------------------
 
-
-nom = demander_nom()
-age = demander_age(nom)
-taille = demander_taille(nom)
-afficher_resultats(nom, age, taille)
+name = ask_name()
+age = ask_age(name)
+height = ask_height(name)
+display_results(name, age, height)
