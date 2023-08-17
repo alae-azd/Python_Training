@@ -1,51 +1,46 @@
 """"Day#2"""
+
 import turtle
 
-
-def demander_choix_dessin():
-    reponse_str = input("""
+def ask_drawing_choice():
+    response_str = input("""
     """)
 
-
-def demander_taille_escalier():
-    taille_escalier_int = 0
-    while taille_escalier_int == 0:
-        taille_escalier_str = input("Veuillez entrer la taille d'escalier : ")
+def ask_stair_size():
+    stair_size_int = 0
+    while stair_size_int == 0:
+        stair_size_str = input("Please enter the stair size: ")
         try:
-            taille_escalier_int = int(taille_escalier_str)
+            stair_size_int = int(stair_size_str)
         except ValueError:
-            print("ERREUR : Vous devrez entrer un nombre pour la taille ")
-    return taille_escalier_int
+            print("ERROR: You need to enter a number for the size ")
+    return stair_size_int
 
-
-def demander_nombre_escalier():
-    nombre_escalier_int = 0
-    while nombre_escalier_int == 0:
-        nombre_escalier_str = input("Veuillez entrer le nombre d'escalier : ")
+def ask_stair_number():
+    stair_number_int = 0
+    while stair_number_int == 0:
+        stair_number_str = input("Please enter the number of stairs: ")
         try:
-            nombre_escalier_int = int(nombre_escalier_str)
+            stair_number_int = int(stair_number_str)
         except ValueError:
-            print("ERREUR : Vous devrez entrer un nombre  ")
-    return nombre_escalier_int
+            print("ERROR: You need to enter a number ")
+    return stair_number_int
 
-
-def dessiner_escalier(taille, nombre):
-    for i in range(0, nombre_escalier):
-        t.forward(taille_escalier)
+def draw_stairs(size, number):
+    for i in range(0, number_of_stairs):
+        t.forward(stair_size)
         t.left(90)
-        t.forward(taille_escalier)
+        t.forward(stair_size)
         t.right(90)
-    t.forward(taille_escalier)
+    t.forward(stair_size)
 
-
-def dessiner_carre(taille):
+def draw_square(size):
     for i in range(0, 4):
-        t.forward(taille)
+        t.forward(size)
         t.left(90)
 
-
-taille_escalier = demander_taille_escalier()
-nombre_escalier = demander_nombre_escalier()
+stair_size = ask_stair_size()
+number_of_stairs = ask_stair_number()
 t = turtle.Turtle()
-dessiner_escalier(taille_escalier, nombre_escalier)
+draw_stairs(stair_size, number_of_stairs)
 turtle.done()
