@@ -1,4 +1,4 @@
-# Egg Cooking Timer
+# Egg Cooking Timer 
 
 This Python program simulates an egg cooking timer, allowing you to choose the desired egg doneness and monitor the cooking process. You can select from soft-boiled, medium-boiled, or hard-boiled eggs, and the program will provide real-time feedback on the cooking progress.
 
